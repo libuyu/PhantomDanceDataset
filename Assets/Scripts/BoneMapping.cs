@@ -34,7 +34,7 @@ public class BoneMapping : MonoBehaviour
 
     private void Reset()
     {
-        // ³õÊ¼»¯ boneDataList Îª³¤¶ÈÎª24µÄÁĞ±í£¬²¢Ê¹ÓÃ SMPLBoneNames À´³õÊ¼»¯ boneName ×Ö¶Î
+        // åˆå§‹åŒ– boneDataList ä¸ºé•¿åº¦ä¸º24çš„åˆ—è¡¨ï¼Œå¹¶ä½¿ç”¨ SMPLBoneNames æ¥åˆå§‹åŒ– boneName å­—æ®µ
         boneDataList.Clear();
         for (int i = 0; i < SMPLBoneNames.Count; i++)
         {
@@ -45,7 +45,7 @@ public class BoneMapping : MonoBehaviour
     }
     void Start()
     {
-        // ÉèÖÃ¹Ç÷À¶ÔÓ¦µÄGameobject
+        // è®¾ç½®éª¨éª¼å¯¹åº”çš„Gameobject
         foreach (BoneData boneData in boneDataList)
         {
             string boneName = boneData.boneName;
@@ -105,7 +105,7 @@ public class BoneMapping : MonoBehaviour
         }
 
         string json = jsonData.ToJson();
-        string filePath = Application.dataPath + "/BoneData.json";
+        string filePath = Application.dataPath + "/Animations/AnimClips/BoneData.json";
         System.IO.File.WriteAllText(filePath, json);
         Debug.Log("Bone data saved to JSON file: " + filePath);
     }

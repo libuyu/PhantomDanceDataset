@@ -26,7 +26,7 @@ public class Json2yaml : EditorWindow
         public static AnimationClip ConvertToAnimationClip(MotionData motionData)
         {
             AnimationClip clip = new AnimationClip();
-            for (int i = 0; i < motionData.bonename.Length; i++)
+            for (int i = 0; i < motionData.bone_name.Length; i++)
             {
                 string bonePath = boneDataList[i].bonePath;
                 AnimationCurve xCurve = CreateCurveFromData(motionData.rotations, i, 0);
@@ -76,7 +76,7 @@ public class Json2yaml : EditorWindow
     }
     public class MotionData
     {
-        public string[] bonename; // bone names
+        public string[] bone_name; // bone names
         public double[][][] rotations; // frame * bone_num * 4, in order of bone names
         public double[][] root_positions; // frame * 3
     }
@@ -107,7 +107,7 @@ public class Json2yaml : EditorWindow
     };
     void globalRotation2localRotation()
     {
-        for (int j = motion_data.bonename.Length - 1; j >= 0; j--)
+        for (int j = motion_data.bone_name.Length - 1; j >= 0; j--)
         {
             for (int i = 0; i < motion_data.rotations.Length; i++) 
             {
@@ -124,7 +124,7 @@ public class Json2yaml : EditorWindow
                 motion_data.rotations[i][j][3] = rot.w;
             }
         }
-        for (int j = motion_data.bonename.Length - 1; j >= 0; j--)
+        for (int j = motion_data.bone_name.Length - 1; j >= 0; j--)
         {
             for (int i = 0; i < motion_data.rotations.Length; i++)
             {
@@ -162,7 +162,7 @@ public class Json2yaml : EditorWindow
     // Start is called before the first frame update
     public void json2anim()
     {        
-        string filePathx = Application.dataPath + "/BoneData.json";
+        string filePathx = Application.dataPath + "/Animations/AnimClips/BoneData.json";
         string jsonx = System.IO.File.ReadAllText(filePathx);
         JsonData jsonData = JsonMapper.ToObject(jsonx);
         for (int i = 0; i < jsonData.Count; i++)
