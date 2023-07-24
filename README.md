@@ -17,9 +17,10 @@ A [Unity3D Toolkit](#toolkit) for data visualization (animation playing) is also
 
 ## Dataset Download
 
-- Google Drive: [link]() `todo`
+- Google Drive: [Download Link](https://drive.google.com/file/d/1hac-vCKTh0qPI81zkgRKkDQnY_tO9BE4/view?usp=sharing)
 
-- Baidu Netdisk: [link]() `todo`
+- Baidu NetDisk: [Download Link](https://pan.baidu.com/s/10U5TWGQtnh0viU3ShWMRSQ?pwd=1mbu)
+
 
 ## Data Format
 For convenient usage, original animation curves in AutoDesk FBX format are converted to float arrays saved in JSON format with frame rate of 30fps. And the corresponding music sequences are saved in the WAV format.
@@ -75,7 +76,7 @@ Scripts: Scripts for data visualization.
 
 3. Bone Mapping
    - Since the skeletal structure of the model is different from the naming, you need to manually match the bones when using it.
-   - In Inspector, find the BoneMapping component, following the SMPL model, drag the bone Gameobject of the model you are using into the Bone Gameobject field of the bone element in the Bone Data List.
+   - In Inspector, find the BoneMapping component, following the SMPL model, drag the bone GameObject of the model you are using into the Bone GameObject field of the bone element in the Bone Data List.
 
 4. Setting the input and output paths
    - Open the "Windows" edit box of the Unity editor, find the "Bone mapping" editor and open it.
@@ -86,13 +87,12 @@ Scripts: Scripts for data visualization.
    - Drag the animation file into the Animation Track of the Timeline.
    - Drag music files into Audio Track if needed.
 
-Now you can visualise the animation playback details in the Timeline and Scene views.
+Now you can visualize the animation playback details in the Timeline and Scene views.
 
 ### Tutorial Video
 
-- YouTube: [link]() `todo`
-
-- BiliBili: [link]() `todo`
+- YouTube (English): [Video Link]()
+- BiliBili (Chinese): [Video Link]()
 
 
 ## Acknowledgement
