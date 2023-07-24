@@ -69,6 +69,7 @@ Scripts: Scripts for data visualization.
 
 2. Configure scenes
    - Drag and drop the model under Animations into the scene or or import your own models.
+   - If you don't know anything about Timeline, you can check [here](https://docs.unity3d.com/2021.3/Documentation/Manual/com.unity.timeline.html)
    - Add Timeline to the model and create a Animation Track.
    - If need, create a Audio Track for music.
 
