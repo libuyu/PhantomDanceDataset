@@ -1,5 +1,19 @@
 # PhantomDance Dataset
 
+The official Dataset proposed in "DanceFormer: Music Conditioned 3D Dance Generation with Parametric Motion Transformer” [AAAI 2022]. 
+
+<table class="center">
+<tr>
+  <td><img src="https://huiye-tech.github.io/files/Jazz.gif"></td>
+  <td><img src="https://huiye-tech.github.io/files/HipHop.gif"></td>
+</tr>
+
+<tr>
+  <td><img src="https://huiye-tech.github.io/files/Otaku.gif"></td>
+  <td><img src="https://huiye-tech.github.io/files/ChineseClassic.gif"></td>
+</tr>
+</table>
+
 **Table of Contents**
 - [Introduction](#introduction)
 - [Dataset Download](#dataset-download)
@@ -9,26 +23,26 @@
 - [Citation](#citation)
 
 ## Introduction
-The official Dataset proposed in "DanceFormer: Music Conditioned 3D Dance Generation with Parametric Motion Transformer” [AAAI 2022]. 
-
-The PhantomDance dataset is the first dance dataset crafted by professional animators. The released version (v1.1) has 260 dance-music pairs with 9.5-hour length in total.
+The PhantomDance dataset is the first dance dataset crafted by professional animators. The released version (v1.2) has 260 dance-music pairs with 9.5-hour length in total.
 
 A [Unity3D Toolkit](#toolkit) for data visualization (animation playing) is also provided in this repo.
 
 ## Dataset Download
 
-- Google Drive: [Download Link](https://drive.google.com/file/d/1hac-vCKTh0qPI81zkgRKkDQnY_tO9BE4/view?usp=sharing)
+- Google Drive: [Download Link](https://drive.google.com/file/d/1cDLsniPSXDSkuXPXosf6A8ybglz6adH8/view?usp=sharing)
 
-- Baidu NetDisk: [Download Link](https://pan.baidu.com/s/10U5TWGQtnh0viU3ShWMRSQ?pwd=1mbu)
+- Baidu NetDisk: [Download Link](https://pan.baidu.com/s/1eXRlvSQkJn7-fhLHnzEVPQ?pwd=44d2)
 
 
 ## Data Format
-For convenient usage, original animation curves in AutoDesk FBX format are converted to float arrays saved in JSON format with frame rate of 30fps. And the corresponding music sequences are saved in the WAV format.
+For convenient usage, original animation curves in AutoDesk FBX format are converted to float arrays saved in JSON format with frame rate of 30fps. And the corresponding music sequences are saved in the WAV format with the sample rate of 16 kHz. The structure of a motion JSON file is:
+- **bone_name** [list of string]: the bone names of the skeletal rig; the dimension is N, the number of bones.
+- **root_positions** [2d array of float]: the position (x, y, z) of the root bone at each frame; the dimension is T x 3 where T is frame number; the unit is meter.
+- **rotations** [3d array of float]: the rotation (in quaternion: X, Y, Z, W) of each bone at each frame; the dimension is T x N x 4.
 
-The human skeleton follows the definition of [SMPL](https://smpl.is.tue.mpg.de/) with 24 joints. So a human pose is represented as root position and 24 joint rotations. The 3D position uses the unit of meter, and the rotations use quaternion representation. That is, a T-frame-length motion sequence have T * (3 + 4 * 24) float values. All the positions and rotations use world coordinates in Unity3D (x-right, y-up, z-forward). You can read [Unity official docs](https://docs.unity3d.com/Manual/QuaternionAndEulerRotationsInUnity.html) for details.
+The human skeleton in PhantomDance follows the definition of [SMPL](https://smpl.is.tue.mpg.de/) with 24 joints. So a human pose is represented as root position and 24 joint rotations. The 3D position uses the unit of meter, and the rotations use quaternion representation. That is, a T-frame-length motion sequence have T * (3 + 4 * 24) motion parameters. All the positions and rotations use world coordinates in Unity3D (x-right, y-up, z-forward). You can read [Unity official docs](https://docs.unity3d.com/Manual/QuaternionAndEulerRotationsInUnity.html) for details.
 
 If you are not familiar with the mathematics of 3D space 3D transformation and quaternion, we recommend you to read this [tutorial](http://web.mit.edu/2.998/www/QuaternionReport1.pdf). Since many 3D animation softwares describe animation data in local coordinates, we also provide script to convert the joint rotations from world coordinates to local coordinates in the toolkit.
-
 
 
 ## Toolkit
@@ -42,19 +56,22 @@ We provide a Unity3D toolkit as well as a [tutorial video](#tutorial-video) for 
 
 This is the Asset folder with following structure:
 
-- Asset
+- Assets
   - Animations
+  - Music
   - Plugins
   - Characters
   - Scripts
 
-Animations: Animation files.
+Animations: The folder for animation files.
+
+Music: The folder for music files.
 
 Plugins: Plugins used in the project, for JSON parsing.
 
-Characters: Standard models used for the animation dataset.
+Characters: 3D models used for the animation dataset.
 
-Scripts: Scripts for data visualization.
+Scripts: Scripts for animation playing.
 
 ### Usage
 
