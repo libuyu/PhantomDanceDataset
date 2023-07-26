@@ -105,7 +105,7 @@ public class BoneMapping : MonoBehaviour
         }
 
         string json = jsonData.ToJson();
-        string filePath = Application.dataPath + "/Animations/AnimClips/"+this.name+"_bone_map.json";
+        string filePath = Application.dataPath + "/Characters/"+this.name+"_bone_map.json";
         System.IO.File.WriteAllText(filePath, json);
         Debug.Log("Bone data saved to JSON file: " + filePath);
     }

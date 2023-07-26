@@ -16,7 +16,7 @@ public class Windowseditor : EditorWindow
 
 
     public static Windowseditor window;
-    [MenuItem("Window/BoneMapping")]
+    [MenuItem("Window/CreateAnimationClip")]
     private static void OpenWindow()
     {
         window = GetWindow<Windowseditor>();

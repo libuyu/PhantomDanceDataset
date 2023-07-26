@@ -165,7 +165,7 @@ public class Json2yaml : EditorWindow
         windowsEditor = EditorWindow.GetWindow<Windowseditor>();
         windowsEditor.LoadFieldValues();
         BodyAnimFile = windowsEditor.inputPath;
-        string filePathx = Application.dataPath + "/Animations/AnimClips/" + windowsEditor.boneMap + "_bone_map.json"; ;
+        string filePathx = Application.dataPath + "/Characters/" + windowsEditor.boneMap + "_bone_map.json"; ;
         string jsonx = System.IO.File.ReadAllText(filePathx);
         JsonData jsonData = JsonMapper.ToObject(jsonx);
         for (int i = 0; i < jsonData.Count; i++)
