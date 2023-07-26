@@ -7,11 +7,12 @@ public class Windowseditor : EditorWindow
     private Rect Panel;
     private static Json2yaml json2yaml;
 
-    public string inputPath, outputPath;
+    public string inputPath, outputPath,boneMap;
 
 
     private static string jsonPathKey = "Assets/Animations/RawData/example.json";
     private static string outputPathKey = "Assets/Animations/AnimClips/example.anim";
+    private static string boneMapKey = "example";
 
 
     public static Windowseditor window;
@@ -36,6 +37,11 @@ public class Windowseditor : EditorWindow
         outputPath = GUILayout.TextField(outputPath);
         GUILayout.EndHorizontal();
 
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Model Name:");
+        boneMap = GUILayout.TextField(boneMap);
+        GUILayout.EndHorizontal();
+
         if (GUILayout.Button("Create Animation Clip!"))
         {
             SaveFieldValues();
@@ -56,11 +62,13 @@ public class Windowseditor : EditorWindow
     {
         EditorPrefs.SetString(jsonPathKey, inputPath);
         EditorPrefs.SetString(outputPathKey, outputPath);
+        EditorPrefs.SetString(boneMapKey, boneMap);
     }
 
     public void LoadFieldValues()
     {
         inputPath = EditorPrefs.GetString(jsonPathKey, "");
         outputPath = EditorPrefs.GetString(outputPathKey, "");
+        boneMap = EditorPrefs.GetString(boneMapKey, "");
     }
 }

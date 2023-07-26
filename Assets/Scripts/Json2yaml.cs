@@ -109,7 +109,7 @@ public class Json2yaml : EditorWindow
     {
         for (int j = motion_data.bone_name.Length - 1; j >= 0; j--)
         {
-            for (int i = 0; i < motion_data.rotations.Length; i++) 
+            for (int i = 0; i < motion_data.rotations.Length; i++)
             {
                 Quaternion rot = new Quaternion(
                     (float)(motion_data.rotations[i][j][0]),
@@ -161,8 +161,11 @@ public class Json2yaml : EditorWindow
     List<Quaternion> init_rots = new List<Quaternion>();
     // Start is called before the first frame update
     public void json2anim()
-    {        
-        string filePathx = Application.dataPath + "/Animations/AnimClips/BoneData.json";
+    {
+        windowsEditor = EditorWindow.GetWindow<Windowseditor>();
+        windowsEditor.LoadFieldValues();
+        BodyAnimFile = windowsEditor.inputPath;
+        string filePathx = Application.dataPath + "/Animations/AnimClips/" + windowsEditor.boneMap + "_bone_map.json"; ;
         string jsonx = System.IO.File.ReadAllText(filePathx);
         JsonData jsonData = JsonMapper.ToObject(jsonx);
         for (int i = 0; i < jsonData.Count; i++)
@@ -181,14 +184,11 @@ public class Json2yaml : EditorWindow
 
             boneDataList.Add(boneData);
         }
-
-        windowsEditor = EditorWindow.GetWindow<Windowseditor>();
-        windowsEditor.LoadFieldValues();
-        BodyAnimFile = windowsEditor.inputPath;
         StreamReader sr = new StreamReader(BodyAnimFile);
         string json = sr.ReadToEnd();
         sr.Close();
         motion_data = JsonMapper.ToObject<MotionData>(json);
+        Debug.Log(motion_data.rotations.Length);
         globalRotation2localRotation();
         AnimationClip animationClip = MotionDataToAnimConverter.ConvertToAnimationClip(motion_data);
         string filePath = windowsEditor.outputPath;
