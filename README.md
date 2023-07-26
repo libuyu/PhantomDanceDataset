@@ -4,13 +4,13 @@ The official Dataset proposed in "DanceFormer: Music Conditioned 3D Dance Genera
 
 <table class="center">
 <tr>
-  <td><img src="https://huiye-tech.github.io/files/Jazz.gif"></td>
-  <td><img src="https://huiye-tech.github.io/files/HipHop.gif"></td>
-</tr>
-
-<tr>
-  <td><img src="https://huiye-tech.github.io/files/Otaku.gif"></td>
+  
   <td><img src="https://huiye-tech.github.io/files/ChineseClassic.gif"></td>
+  <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/Otaku.gif"></td>
+</tr>
+<tr>
+  <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/Jazz.gif"></td>
+  <td><img src="https://huiye-tech.github.io/files/HipHop.gif"></td>
 </tr>
 </table>
 
