@@ -36,7 +36,7 @@ public class Windowseditor : EditorWindow
         outputPath = GUILayout.TextField(outputPath);
         GUILayout.EndHorizontal();
 
-        if (GUILayout.Button("Switch!"))
+        if (GUILayout.Button("Create Animation Clip!"))
         {
             SaveFieldValues();
             LoadFieldValues();
