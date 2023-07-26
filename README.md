@@ -76,14 +76,13 @@ Scripts: Scripts for animation playing.
 ### Usage
 
 1. Install Unity and Toolkit
-   - Unity Download: https://unity.com/download
    - Toolkit install: 
-      - Create a new Unity project.
-      - Download Toolkit:
-      ```
-      $ git clone https://github.com/libuyu/PhantomDanceDataset.git
-      ```
-      - Replace the Unity project's Asset folder with toolkit's Asset folder. 
+   ```
+   $ git clone https://github.com/libuyu/PhantomDanceDataset.git
+   ```
+   - Unity Download: https://unity.com/download
+   - Create a new Unity project.
+   - Replace the Unity project's Asset folder with toolkit's Asset folder. 
 
 2. Configure scenes
    - Drag and drop the model under Animations into the scene or or import your own models.
