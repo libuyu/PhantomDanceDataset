@@ -44,6 +44,7 @@ public class Windowseditor : EditorWindow
 
         if (GUILayout.Button("Create Animation Clip!"))
         {
+            Debug.Log("Model Name:" + boneMap);
             SaveFieldValues();
             LoadFieldValues();
             json2yaml = new Json2yaml();
