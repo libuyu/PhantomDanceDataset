@@ -117,7 +117,7 @@ public class Json2yaml : EditorWindow
                     (float)(motion_data.rotations[i][j][2]),
                     (float)(motion_data.rotations[i][j][3])
                 );
-                rot = boneDataList[j].initialRotation * rot;
+                rot = rot* boneDataList[j].initialRotation;
                 motion_data.rotations[i][j][0] = rot.x;
                 motion_data.rotations[i][j][1] = rot.y;
                 motion_data.rotations[i][j][2] = rot.z;
