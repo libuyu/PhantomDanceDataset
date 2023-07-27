@@ -20,7 +20,7 @@ public class Windowseditor : EditorWindow
     private static void OpenWindow()
     {
         window = GetWindow<Windowseditor>();
-        window.LoadFieldValues();
+        LoadFieldValues();
     }
     private void OnGUI()
     {
