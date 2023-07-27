@@ -4,12 +4,12 @@ The official Dataset proposed in "DanceFormer: Music Conditioned 3D Dance Genera
 
 <table class="center">
 <tr>
-  <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/ChineseClassic.gif"></td>
-  <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/Otaku.gif"></td>
+  <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/Chinese1.gif"></td>
+  <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/Otaku1.gif"></td>
 </tr>
 <tr>
-  <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/Jazz.gif"></td>
-  <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/HipHop.gif"></td>
+  <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/Jazz1.gif"></td>
+  <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/Hiphop1.gif"></td>
 </tr>
 </table>
 
@@ -85,14 +85,14 @@ Scenes: The default Unity folder of Scenes.
    - Download and install Unity Hub and Unity Editor: https://unity.com/download
    - Open the toolkit project with Unity Hub
 
-> We provide a SampleScene with properly configured official [SMPL](https://smpl.is.tue.mpg.de/) character model and timeline tracks. To play the animation data on the SMPL model, you just need the following steps:
+> We provide a SampleScene with properly configured character models (an official SMPL model and a non-SMPL model) and timeline tracks. To play the animation data on the models, you just need the following steps:
 
 2. Convert motion data to animation clip
    - Open the "Windows" edit box of the Unity editor, find the "Bone mapping" editor and open it.
    - Set these params: 
       - input json path (e.g. "Assets/Animations/RawData/xxx.json")
       - output anim path (e.g. "Assets/Animations/AnimClips/xxx.anim")
-      - model name ("Official_SMPL" for the sample scene).
+      - model name ("Official_SMPL" or "Jean" in the sample scene).
    - Click "Create Animation Clip!" to convert the json data in the dataset to .anim file.
 
 3. Play the animation with Timeline
