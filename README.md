@@ -4,13 +4,12 @@ The official Dataset proposed in "DanceFormer: Music Conditioned 3D Dance Genera
 
 <table class="center">
 <tr>
-  
-  <td><img src="https://huiye-tech.github.io/files/ChineseClassic.gif"></td>
+  <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/ChineseClassic.gif"></td>
   <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/Otaku.gif"></td>
 </tr>
 <tr>
   <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/Jazz.gif"></td>
-  <td><img src="https://huiye-tech.github.io/files/HipHop.gif"></td>
+  <td><img src="https://raw.githubusercontent.com/libuyu/libuyu.github.io/master/files/HipHop.gif"></td>
 </tr>
 </table>
 
@@ -62,6 +61,7 @@ This is the Asset folder with following structure:
   - Plugins
   - Characters
   - Scripts
+  - Scenes
 
 Animations: The folder for animation files.
 
@@ -72,6 +72,8 @@ Plugins: Plugins used in the project, for JSON parsing.
 Characters: 3D models used for the animation dataset.
 
 Scripts: Scripts for animation playing.
+
+Scenes: The default Unity folder of Scenes.
 
 ### Usage
 
@@ -84,10 +86,13 @@ Scripts: Scripts for animation playing.
    - Create a new Unity project.
    - Replace the Unity project's Asset folder with toolkit's Asset folder. 
 
+> We provide a SampleScene with properly configured SMPL character model and timeline. If you only want to visualize your motion data, just go to Step 4.
+
 2. Configure scenes
-   - Drag and drop the model under Animations into the scene or or import your own models.
-   - If you don't know anything about Timeline, you can check [here](https://docs.unity3d.com/2021.3/Documentation/Manual/com.unity.timeline.html)
+   - Drag and drop the character model under Animations into the scene or or import your own models.
+   - **Note**: the model should be T-posed. If your model in Scene window is not in T-pose, rotate bones manually to fit T-pose.
    - Add Timeline to the model and create a Animation Track.
+   - If you don't know anything about Timeline, you can check [here](https://docs.unity3d.com/2021.3/Documentation/Manual/com.unity.timeline.html)
    - If need, create a Audio Track for music.
 
 3. Bone Mapping
@@ -107,8 +112,8 @@ Now you can visualize the animation playback details in the Timeline and Scene v
 
 ### Tutorial Video
 
-- YouTube (English): [Video Link]()
-- BiliBili (Chinese): [Video Link]()
+- YouTube (English subtitle): [Video Link]()
+- BiliBili (Chinese subtitle): [Video Link]()
 
 
 ## Acknowledgement
