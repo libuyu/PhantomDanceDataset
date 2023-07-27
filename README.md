@@ -75,46 +75,63 @@ Scripts: Scripts for animation playing.
 
 Scenes: The default Unity folder of Scenes.
 
-### Usage
+### Use the toolkit to visualize motion data
 
-1. Install Unity and Toolkit
+1. Install Unity3D and Toolkit
    - Toolkit install: 
    ```
    $ git clone https://github.com/libuyu/PhantomDanceDataset.git
    ```
    - Download and install Unity Hub and Unity Editor: https://unity.com/download
-   - Open the project with Unity Hub
+   - Open the toolkit project with Unity Hub
 
-> We provide a SampleScene with properly configured SMPL character model and timeline. If you only want to visualize your motion data, just go to Step 4.
+> We provide a SampleScene with properly configured official [SMPL](https://smpl.is.tue.mpg.de/) character model and timeline tracks. To play the animation data on the SMPL model, you just need the following steps:
 
-2. Configure scenes
-   - Drag and drop the character model under Animations into the scene or or import your own models.
-   - **Note**: the model should be T-posed. If your model in Scene window is not in T-pose, rotate bones manually to fit T-pose.
-   - Drag the model gameobject to the Timeline
-
-3. Bone Mapping
-   - Since the skeletal structure of the model is different from the naming, you need to manually match the bones when using it.
-   - In Inspector, find the BoneMapping component, following the SMPL model, drag the bone GameObject of the model you are using into the Bone GameObject field of the bone element in the Bone Data List.
-
-4. Setting the input and output paths
+2. Convert motion data to animation clip
    - Open the "Windows" edit box of the Unity editor, find the "Bone mapping" editor and open it.
-   - Fill in the input and output paths as directed
+   - Set these params: 
+      - input json path (e.g. "Assets/Animations/RawData/xxx.json")
+      - output anim path (e.g. "Assets/Animations/AnimClips/xxx.anim")
+      - model name ("Official_SMPL" for the sample scene).
    - Click "Create Animation Clip!" to convert the json data in the dataset to .anim file.
 
-5. Playing an animation using the generated .anim file
-   - Drag the animation file into the Animation Track of the Timeline.
+3. Play the animation with Timeline
+   - Drag the animation clip file into the Animation Track of the Timeline.
    - Drag music files into Audio Track if needed.
+   - Click the play button in the Timeline window.
 
-Now you can visualize the animation playback details in the Timeline and Scene views.
+Now you can playback any details with Timeline and watch the animation in Scene views.
+
+
+### Use custom 3D characters
+1. Configure scenes
+   - Put your custom 3D model in the Characters folder, and drag it into the scene or hierarchy window.
+   - **Note**: the model should be T-posed. If your model in Scene view is not in T-pose, rotate bones manually to fit T-pose.
+   - Drag the model (in the hierarchy window) to the Timeline to add an Animation Track.
+   - If needed, create an AudioSource in the scene and put it to the Timeline to add an Audio Track.
+
+2. Bone Mapping
+   - Since the skeletal structures and bone names of different models are usually different, you need to manually match the bones to the SMPL format when using non-SMPL rigged models.
+   - In inspector, find the BoneMapping component, drag the bone object of the your model into the Bone Data List in inspector to match the corresponding SMPL bone.
+   - Run the Unity project and you will have a bone map file for your model.
+
+3. Follow Step 2-3 in the [previous section](#use-the-toolkit-to-visualize-motion-data).
+
+
 
 ### Tutorial Video
 
-- YouTube (English subtitle): [Video Link]()
-- BiliBili (Chinese subtitle): [Video Link]()
+- English subtitle:  
+- Chinese subtitle: https://www.bilibili.com/video/BV1VX4y1E7Pg
+
+### Copyright
 
 
 ## Acknowledgement
-Thanks to [Yongxiang](https://github.com/Qedsama) for his contribution in the Unity3D toolkit.
+- The 3D character models in this project are provided by:
+   - [SMPL-Model](https://smpl.is.tue.mpg.de/)
+   - Jean in [Genshin Impact](https://genshin.hoyoverse.com/)
+- Thanks to [Yongxiang](https://github.com/Qedsama) for his contribution in the Unity3D toolkit.
 
 ## Citation
 ```
