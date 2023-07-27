@@ -90,9 +90,7 @@ Scenes: The default Unity folder of Scenes.
 2. Configure scenes
    - Drag and drop the character model under Animations into the scene or or import your own models.
    - **Note**: the model should be T-posed. If your model in Scene window is not in T-pose, rotate bones manually to fit T-pose.
-   - Add Timeline to the model and create a Animation Track.
-   - If you don't know anything about Timeline, you can check [here](https://docs.unity3d.com/2021.3/Documentation/Manual/com.unity.timeline.html)
-   - If need, create a Audio Track for music.
+   - Drag the model gameobject to the Timeline
 
 3. Bone Mapping
    - Since the skeletal structure of the model is different from the naming, you need to manually match the bones when using it.
@@ -101,7 +99,7 @@ Scenes: The default Unity folder of Scenes.
 4. Setting the input and output paths
    - Open the "Windows" edit box of the Unity editor, find the "Bone mapping" editor and open it.
    - Fill in the input and output paths as directed
-   - Click "Switch" to convert the json data in the dataset to .anim file.
+   - Click "Create Animation Clip!" to convert the json data in the dataset to .anim file.
 
 5. Playing an animation using the generated .anim file
    - Drag the animation file into the Animation Track of the Timeline.
