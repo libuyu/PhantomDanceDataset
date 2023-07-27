@@ -82,9 +82,8 @@ Scenes: The default Unity folder of Scenes.
    ```
    $ git clone https://github.com/libuyu/PhantomDanceDataset.git
    ```
-   - Unity Download: https://unity.com/download
-   - Create a new Unity project.
-   - Replace the Unity project's Asset folder with toolkit's Asset folder. 
+   - Download and install Unity Hub and Unity Editor: https://unity.com/download
+   - Open the project with Unity Hub
 
 > We provide a SampleScene with properly configured SMPL character model and timeline. If you only want to visualize your motion data, just go to Step 4.
 
