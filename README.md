@@ -39,9 +39,9 @@ For convenient usage, original animation curves in AutoDesk FBX format are conve
 - **root_positions** [2d array of float]: the position (x, y, z) of the root bone at each frame; the dimension is T x 3 where T is frame number; the unit is meter.
 - **rotations** [3d array of float]: the rotation (in quaternion: X, Y, Z, W) of each bone at each frame; the dimension is T x N x 4.
 
-The human skeleton in PhantomDance follows the definition of [SMPL](https://smpl.is.tue.mpg.de/) with 24 joints. So a human pose is represented as root position and 24 joint rotations. The 3D position uses the unit of meter, and the rotations use quaternion representation. That is, a T-frame-length motion sequence have T * (3 + 4 * 24) motion parameters. All the positions and rotations use world coordinates in Unity3D (x-right, y-up, z-forward). You can read [Unity official docs](https://docs.unity3d.com/Manual/QuaternionAndEulerRotationsInUnity.html) for details.
+The human skeleton in PhantomDance follows the definition of [SMPL](https://smpl.is.tue.mpg.de/) with 24 joints. So a human pose is represented as root position and 24 joint rotations. The 3D position uses the unit of meter, and the rotations use quaternion representation. That is, a T-frame-length motion sequence have T * (3 + 4 * 24) motion parameters. All the positions and rotations use **world** coordinates in Unity3D (x-right, y-up, z-forward). You can read [Unity official docs](https://docs.unity3d.com/Manual/QuaternionAndEulerRotationsInUnity.html) for details.
 
-If you are not familiar with the mathematics of 3D space 3D transformation and quaternion, we recommend you to read this [tutorial](http://web.mit.edu/2.998/www/QuaternionReport1.pdf). Since many 3D animation softwares describe animation data in local coordinates, we also provide script to convert the joint rotations from world coordinates to local coordinates in the toolkit.
+If you are not familiar with the mathematics of 3D space 3D transformation and quaternion, we recommend you to read this [tutorial](http://web.mit.edu/2.998/www/QuaternionReport1.pdf). Since many 3D animation softwares describe animation data in **local** coordinates, we also provide script to convert the joint rotations from world coordinates to local coordinates in the toolkit.
 
 
 ## Toolkit
@@ -121,7 +121,7 @@ Now you can playback any details with Timeline and watch the animation in Scene 
 
 ### Tutorial Video
 
-- English subtitle: 
+- English subtitle: https://youtu.be/EWXAi616iVs
 - Chinese subtitle: https://www.bilibili.com/video/BV1VX4y1E7Pg
 
 
