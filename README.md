@@ -121,10 +121,8 @@ Now you can playback any details with Timeline and watch the animation in Scene 
 
 ### Tutorial Video
 
-- English subtitle:  
+- English subtitle: 
 - Chinese subtitle: https://www.bilibili.com/video/BV1VX4y1E7Pg
-
-### Copyright
 
 
 ## Acknowledgement
